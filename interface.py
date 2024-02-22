@@ -64,22 +64,26 @@ if __name__ == "__main__":
     initialize_models(image_model_path, text_model_path)
 
     iface = gr.Interface(
-    fn=generate_audio_from_image,
-    inputs=["image",
-            gr.Dropdown(
-            choices=list(language_mapping.keys()), label="Language"
-    )],
-    outputs=["audio", "text"],
-    title="🌟 Generate Audio from Image 📸🔊",
-    description="""✨ Welcome to the Audio Generation from Image Tool! ✨\n
-    This powerful tool seamlessly combines cutting-edge image captioning and text-to-speech technologies, offering you an immersive audiovisual experience like never before. Simply upload an image and select the source language to generate audio from the image caption. The generated audio will be in Persian (🇮🇷), offering you a unique perspective on your visual content.\n
-    🎨 Explore New Dimensions of Visual Content 🚀\n
-    Whether you're a language enthusiast looking to enhance your skills, a content creator seeking innovative ways to engage your audience, or simply curious about the capabilities of AI-driven technologies, this tool opens up endless possibilities. Witness your images come to life as the AI-powered models analyze and describe them, transforming static visuals into dynamic auditory experiences.\n
-    🤖 Powered by Advanced AI Models 🤖\n
-    Behind the scenes, sophisticated machine learning models drive this tool forward. Leveraging state-of-the-art image captioning models like Salesforce's "blip-image-captioning-large" and text-to-speech models such as Facebook's "seamless-m4t-v2-large", this interface delivers high-quality audio outputs with remarkable accuracy and clarity.\n
-    🔊 Immerse Yourself in the World of AI-Generated Audiovisual Experiences 🔊\n
-    Whether you're exploring new languages, crafting captivating multimedia presentations, or simply enjoying the fusion of art and technology, this tool invites you to dive into the realm of AI-generated audiovisual experiences. Let your imagination soar as you witness the convergence of image and sound, powered by the latest advancements in artificial intelligence.\n
-    Supported output languages: English (🇺🇸), Persian (🇮🇷), Russian (🇷🇺), French (🇫🇷), German (🇩🇪), Spanish (🇪🇸), Turkish (🇹🇷), Japanese (🇯🇵), Italian (🇮🇹), Korean (🇰🇷)""",
+        fn=generate_audio_from_image,
+        inputs=["image",
+                gr.Dropdown(
+                    choices=list(language_mapping.keys()), label="Language"
+                )],
+        outputs=["audio", "text"],
+        title="🌟 Generate Audio from Image 📸🔊",
+        description="""✨ Welcome to the Audio Generation from Image Tool! ✨\n
+        This powerful tool seamlessly combines cutting-edge image captioning and text-to-speech technologies, offering you an immersive audiovisual experience like never before. Simply upload an image and select the source language to generate audio from the image caption. The generated audio will be in Persian (🇮🇷), offering you a unique perspective on your visual content.\n
+        🎨 Explore New Dimensions of Visual Content 🚀\n
+        Whether you're a language enthusiast looking to enhance your skills, a content creator seeking innovative ways to engage your audience, or simply curious about the capabilities of AI-driven technologies, this tool opens up endless possibilities. Witness your images come to life as the AI-powered models analyze and describe them, transforming static visuals into dynamic auditory experiences.\n
+        🤖 Powered by Advanced AI Models 🤖\n
+        Behind the scenes, sophisticated machine learning models drive this tool forward. Leveraging state-of-the-art image captioning models like Salesforce's "blip-image-captioning-large" and text-to-speech models such as Facebook's "seamless-m4t-v2-large", this interface delivers high-quality audio outputs with remarkable accuracy and clarity.\n
+        🔊 Immerse Yourself in the World of AI-Generated Audiovisual Experiences 🔊\n
+        Whether you're exploring new languages, crafting captivating multimedia presentations, or simply enjoying the fusion of art and technology, this tool invites you to dive into the realm of AI-generated audiovisual experiences. Let your imagination soar as you witness the convergence of image and sound, powered by the latest advancements in artificial intelligence.\n
+        Supported output languages: English (🇺🇸), Persian (🇮🇷), Russian (🇷🇺), French (🇫🇷), German (🇩🇪), Spanish (🇪🇸), Turkish (🇹🇷), Japanese (🇯🇵), Italian (🇮🇹), Korean (🇰🇷)""",
+        examples=[
+            ["tree.jpg", "🇮🇷 Persian"],
+            ["young_days.png", "🇮🇷 Persian"]
+        ]
     )
-  
-iface.launch()
+
+    iface.launch()
